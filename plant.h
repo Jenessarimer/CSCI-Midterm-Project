@@ -18,8 +18,8 @@ class Plant {
         bool getNeedWater() const;
         int getPlantSize() const;
         virtual bool plantDie() = 0;
-        virtual std::string subType() = 0;
-        bool isCompatible(const Plant &p, std::string season) const;
+        virtual std::string subType() const = 0;
+        bool isCompatible(const Plant &p) const;
 
     private:
         std::string name;

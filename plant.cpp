@@ -81,11 +81,7 @@ int Plant::getPlantSize() const
     return plantSize;
 }
 
-bool Plant::isCompatible(const Plant &p, std::string season) const
+bool Plant::isCompatible(const Plant &p) const
 {
-    std::string s = p.getSeason();
-    int sZ = p.getPlantSize();
-    int dW = p.getWaterLevel();
-    std::string sT = p.subType();
-    return ;
+    return (Season == p.getSeason() && plantSize == p.getPlantSize() && waterlevel == p.getWaterLevel() && subType() == p.subType());
 }
