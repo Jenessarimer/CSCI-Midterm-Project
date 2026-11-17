@@ -2,7 +2,7 @@
 
 class Plant {
     public:
-        Plant(std::string sName, int sCost = 0, int sWater = 0, std::string sSeason, int pSize = 0);
+        Plant(std::string sName="", int sCost = 0, int sWater = 0, std::string sSeason="", int pSize = 0);
         void setName(std::string name);
         void setSeedCost(int seedCost);
         void setWaterLevel(int waterlevel);
