@@ -3,13 +3,24 @@
 class Food : public Plant{
     public:
         Food();
-        void setReadyToPick();
-        void setNumHarRem();
-
+        void setHarvestYield(int amt);
+        void setDaysToHarvest(int d);
+        void setReadyToHarvest(bool r);
+        void setHarvestsLeft(int c);
+        void setMultiSeason(bool m);
+        int getHarvestYield() const;
+        int getDaysToHarvest() const;
+        bool getReadyToHarvest() const;
+        int getHarvestsLeft() const;
+        bool getMultiSeason() const;
+        int harvest(int &energy);
+        bool plantDie();
+        std::string subType() const;
+        
     private:
-        bool multiSeasonal;
-        bool readyToPick;
-        int numHarRem;
-        int amountProduced;
-        const int growingDays;
+        bool multiSeason;
+        bool readyToHarvest;
+        int harvestYeild;
+        int daysToHarvest;
+        int harvestsLeft;
 };
