@@ -4,9 +4,9 @@ Plant::Plant(std::string sName, int sCost, int sWater, std::string sSeason, int 
 {
    setName(sName);
    setSeason(sSeason);
-   if(sCost > 0) setSeedCost(sCost);
-   if(sWater > 0) setWaterLevel(sWater);
-   if(pSize > 0) setPlantSize(pSize);
+   if(sCost >= 0) setSeedCost(sCost);
+   if(sWater >= 0) setWaterLevel(sWater);
+   if(pSize >= 0) setPlantSize(pSize);
    daysPlanted = 0;
    needWater = true;
 }
