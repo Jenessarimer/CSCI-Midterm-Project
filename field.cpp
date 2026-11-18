@@ -2,7 +2,9 @@
 
 Field::Field(int squares) : Land(squares)
 {
-
+    if(squares >= 0 || squares < getTotalSquares()){
+        capacity = squares;
+    }else capacity = 0;
 }
 
 void Field::waterField(int &energy)

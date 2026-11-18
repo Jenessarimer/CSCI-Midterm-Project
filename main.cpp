@@ -66,6 +66,7 @@ void numValidateInput(int& num, std::string repeat){
     std::cout << "Invalid input." <<std::endl;
     std::cout << repeat <<std::endl;
     std::cin >> num;
+    std::cout << std::endl;
     }
 }
 void mainSetup(){
