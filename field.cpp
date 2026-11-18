@@ -1,7 +1,8 @@
 #include "field.h"
 
-Field::Field(int squares)
+Field::Field(int squares) : Land(squares)
 {
+
 }
 
 void Field::waterField(int &energy)

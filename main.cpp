@@ -1,4 +1,5 @@
-#include "land.h"
+
+#include "field.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -6,6 +7,7 @@
 int randomGeneration();
 void errorMessageYN(char& input, std::string phrase);
 void clearStream();
+void numValidateInput(int& num, std::string repeat);
 int main(){
         char answer;
         int numSquares;
@@ -28,14 +30,9 @@ int main(){
         }
         std::cout << "You have " << numSquares << " squares of land" <<std::endl;
         std::cout << "Now we must decide how to split the land.\nFields can hold decorative plants, yards can hold food." <<std::endl;
-        std::cout << "How many squares would you like in your field";
-        std::cin >> numField;
-        if(!std::cin || numField < 1){
-            if(!std::cin){
-                clearStream();
-            }
-            
-        }
+        numValidateInput(numField, "How many squares would you like in your field");
+        Field ourField(numField);
+        std::cout << ourField.getTotalSquares();
         std::cout << "How many squares would you like to be in your yard?";
 
 
@@ -59,12 +56,18 @@ void clearStream(){
     std::cin.ignore(10000, '\n');
 }
 
-void numInvalidInput(int& num, std::string repeat){
-    if(!std::cin || num < 1){
+void numValidateInput(int& num, std::string repeat){
+    std::cout << repeat << std::endl;
+    std::cin >> num;
+    while(!std::cin || num < 1){
         if(!std::cin){
             clearStream();
         }
-    }
     std::cout << "Invalid input." <<std::endl;
-    std::cout 
+    std::cout << repeat <<std::endl;
+    std::cin >> num;
+    }
+}
+void mainSetup(){
+
 }
